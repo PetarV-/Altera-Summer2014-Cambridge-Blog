@@ -1,42 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Altera-Summer2014-Cambridge : " />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Altera-Summer2014-Cambridge by PetarV-</title>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-    <title>Altera-Summer2014-Cambridge</title>
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   </head>
-
   <body>
-
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/PetarV-/Altera-Summer2014-Cambridge">View on GitHub</a>
-
-          <h1 id="project_title">Altera-Summer2014-Cambridge</h1>
-          <h2 id="project_tagline"></h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/PetarV-/Altera-Summer2014-Cambridge/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/PetarV-/Altera-Summer2014-Cambridge/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
+    <div class="wrapper">
+      <header class="without-description">
+        <h1>Altera-Summer2014-Cambridge</h1>
+        <p></p>
+        <p class="view"><a href="https://github.com/PetarV-/Altera-Summer2014-Cambridge">View the Project on GitHub <small>PetarV-/Altera-Summer2014-Cambridge</small></a></p>
+        <ul>
+          <li><a href="https://github.com/PetarV-/Altera-Summer2014-Cambridge/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/PetarV-/Altera-Summer2014-Cambridge/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/PetarV-/Altera-Summer2014-Cambridge">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
         <h3>
 <a name="week-1" class="anchor" href="#week-1"><span class="octicon octicon-link"></span></a>Week 1</h3>
 
+<p>During the first week of our internship, we have:</p>
+
 <ul>
-<li>Learnt some blue spec</li>
-<li>Put linux on an SD card and used that to boot the on chip arm processor (which we can communicate with over minicom)</li>
+<li>Attended Altera's training session in High Wycombe;</li>
+<li>Learnt the basics of Bluespec SystemVerilog and used it to program several example modules;</li>
+<li>Got all of Quartus' tools to work by locating missing libraries, fixing rules for USB device permissions, etc;</li>
+<li>Booted the ARM processor on the SoCKit using an SD card containing Linux;</li>
+<li>Interfaced to the ARM in two ways: initially using Minicom over a USB connection, now also via Ethernet+SSH to ease file transfer.</li>
+<li>Successfully programmed the FPGA using the ARM (on-boot) as well as JTAG.</li>
+<li><p>Established basic communication ARM -&gt; FPGA, in the following manner:</p></li>
+<li><p>Put linux on an SD card and used that to boot the on chip arm processor (which we can communicate with over minicom)</p></li>
 <li>Wrote a simple bluespec program take creates an avalon slave that takes integers and returns them multiplied by 3</li>
 <li>Connected the triple program to a HPC component in Qsys</li>
 <li>Compiled the binary for the FPGA and transfered it to the SD card</li>
@@ -53,16 +57,11 @@
 </ul><hr><p>Lawrence and Petar</p>
       </section>
     </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Altera-Summer2014-Cambridge maintained by <a href="https://github.com/PetarV-">PetarV-</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
+    <footer>
+      <p>Project maintained by <a href="https://github.com/PetarV-">PetarV-</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
     
-
   </body>
 </html>
