@@ -39,21 +39,21 @@
 <li>Booted the ARM processor on the SoCKit using an SD card containing Linux;</li>
 <li>Interfaced to the ARM in two ways: initially using Minicom over a USB connection, now also via Ethernet+SSH to ease file transfer.</li>
 <li>Successfully programmed the FPGA using the ARM (on-boot) as well as JTAG.</li>
-<li><p>Established basic communication ARM -&gt; FPGA, in the following manner:</p></li>
-<li><p>Put linux on an SD card and used that to boot the on chip arm processor (which we can communicate with over minicom)</p></li>
-<li>Wrote a simple bluespec program take creates an avalon slave that takes integers and returns them multiplied by 3</li>
-<li>Connected the triple program to a HPC component in Qsys</li>
-<li>Compiled the binary for the FPGA and transfered it to the SD card</li>
-<li>Wrote a C program that takes numbers on on the command line and writes them to the memory mapped hpc2fpga bridge</li>
-<li>Cross compiled the C program for arm, transfered it and the FPGA bitstream to the SD card</li>
-<li>Programmed the FPGA from the arm chip.</li>
-<li>Ran the C program on the arm, supplying numbers on the command line across minicom, successfully getting the trippled value back</li>
-</ul><p>We hope to...</p>
+<li>Established basic communication ARM -&gt; FPGA, in the following manner:
 
 <ul>
-<li>Achieve communication on the fpga2hpc bridge (hopefully directly accessing SDRAM, maybe peripherals?)</li>
-<li>Get ethernet connectivity.</li>
-<li>Decide on a project</li>
+<li>Wrote a simple BSV module implementing an Avalon Slave that takes a number and returns it tripled;</li>
+<li>Connected the module to an 'HPS' component in Qsys;</li>
+<li>Wrote a C program that writes integers to a memory-mapped hpc2fpga bridge</li>
+<li>Successfully ran the C program on the ARM chip, getting tripled values back from the FPGA.</li>
+</ul>
+</li>
+</ul><p>For the following week, we hope to:</p>
+
+<ul>
+<li>Achieve communication FPGA -&gt; ARM (hopefully directly accessing SDRAM, maybe peripherals?);</li>
+<li>Obtain a second SoC board.</li>
+<li>Decide on a project.</li>
 </ul><hr><p>Lawrence and Petar</p>
       </section>
     </div>
