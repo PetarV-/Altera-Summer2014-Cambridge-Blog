@@ -19,9 +19,40 @@
       <header class="without-description">
         <h1>Altera-Summer2014-Cambridge</h1>
         <p></p>
+        <p class="view"><a href="https://github.com/PetarV-/Altera-Summer2014-Cambridge">View the Project on GitHub <small>PetarV-/Altera-Summer2014-Cambridge</small></a></p>
+        <ul>
+          <li><a href="https://github.com/PetarV-/Altera-Summer2014-Cambridge/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/PetarV-/Altera-Summer2014-Cambridge/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/PetarV-/Altera-Summer2014-Cambridge">View On <strong>GitHub</strong></a></li>
+        </ul>
       </header>
       <section>
         <h3>
+<a name="week-2" class="anchor" href="#week-2"><span class="octicon octicon-link"></span></a>Week 2</h3>
+
+<p>During the second week of our internship, we have:</p>
+
+<ul>
+<li>Successfully achieved communication FPGA -&gt; ARM, through directly writing to the ARM's SDRAM.</li>
+<li>Extended this to support a logical memory model for the FPGA; more precisely:
+
+<ul>
+<li>On the ARM, we implemented memory-mapping page-sized chunks, linked together in a doubly-linked list structure (such that the start of each chunk is filled with information such as size and pointers to the previous and next chunk).</li>
+<li>From the FPGA side, we have designed a custom component in Bluespec to handle memory address translation. It consists of:
+
+<ul>
+<li>An Avalon slave connected to the hps2fpga bridge, receiving the address of the first page in the list from the ARM.</li>
+<li>Another Avalon slave which can be linked to any component's master, receiving a request to write at a particular logical address (word-indexed from 0); this request is then translated into the actual address(es) on the ARM and sent to</li>
+<li>An Avalon master connected to the fpga2hps bridge, writing directly into the relevant page(s) in the linked list structure on the ARM's SDRAM.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>This is currently all implemented using polling, we're currently trying to get interrupts to work properly. We wrote a kernel module for the ARM that receives interrupts, and additional C code that processes them (by reading from a "file" provided by the module). However we didn't get it to work yet, probably due to different versions of the Linux kernel we have on the board and what was used to compile the module.</li>
+<li>We also obtained additional SoCKit boards, which should help speed up development and give us a wider range of things to look at.</li>
+</ul><hr><p>Lawrence and Petar</p>
+
+<hr><h3>
 <a name="week-1" class="anchor" href="#week-1"><span class="octicon octicon-link"></span></a>Week 1</h3>
 
 <p>During the first week of our internship, we have:</p>
