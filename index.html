@@ -19,9 +19,32 @@
       <header class="without-description">
         <h1>Altera-Summer2014-Cambridge</h1>
         <p></p>
+        <p class="view"><a href="https://github.com/PetarV-/Altera-Summer2014-Cambridge">View the Project on GitHub <small>PetarV-/Altera-Summer2014-Cambridge</small></a></p>
+        <ul>
+          <li><a href="https://github.com/PetarV-/Altera-Summer2014-Cambridge/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/PetarV-/Altera-Summer2014-Cambridge/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/PetarV-/Altera-Summer2014-Cambridge">View On <strong>GitHub</strong></a></li>
+        </ul>
       </header>
       <section>
         <h3>
+<a name="week-3" class="anchor" href="#week-3"><span class="octicon octicon-link"></span></a>Week 3</h3>
+
+<p>Lawrence and I have finally obtained additional SoCKits at the end of week 2, we were able to pursue separate ideas. As such, the blog posts will from now on be split between us.</p>
+
+<p>Lawrence:</p>
+
+<ul>
+<li>Conducted a few tests involving getting a Bluespec component to use the DRAMs on the FPGA.</li>
+<li>Spent most of the week trying to synthesise BlueVecII (a vector coprocessor) onto the FPGA. It initially couldn't fit, so had to be trimmed down; however, in the end the synthesis still failed due to the way it was configured. This idea might be briefly revisited.</li>
+<li>Successfully placed the BERI processor on the FPGA and managed to partially boot FreeBSD on it (waiting on a more suitable build of the kernel for this board).</li>
+</ul><p>Petar:</p>
+
+<ul>
+<li>Initial goal was to fix the kernel versions problem from last week that prevented us from compiling a correct interrupt-handling kernel module. After lots of reformats, I think we finally have a good custom SD card image, containing a manually-compiled kernel, and a choice of useful tools. A working example of an interrupt processing kernel module has since been built and successfully loaded; our own kernel module built last week currently has some undecipherable errors upon initialisation, we will possibly try to re-write it later.</li>
+<li>Main goal for the week was porting an exercise from the Cambridge ECAD practicals (can be accessed from <a href="http://www.cl.cam.ac.uk/teaching/1314/ECAD+Arch/labs/lab2/lablet2_2_1.html">this link</a>) to the SoCKit, using the ARM as a substitute for the NIOS and (for now) the on-board LCD instead of the tPad's touchscreen. This involved reading through and understanding Altera's FIFO utilities and libraries for handling the ring processor for the TTCs (written originally for the NIOS, in C) and rewriting them to be suited for the ARM. In addition I familiarised myself with the API for the LCD. The exercise was successfully ported.</li>
+<li>For next week, the main plan is to interface to PixelStream, a Bluespec component that could be used to communicate to VGA devices.</li>
+</ul><hr><h3>
 <a name="week-2" class="anchor" href="#week-2"><span class="octicon octicon-link"></span></a>Week 2</h3>
 
 <p>During the second week of our internship, we have:</p>
