@@ -19,6 +19,12 @@
       <header class="without-description">
         <h1>Altera-Summer2014-Cambridge</h1>
         <p></p>
+        <p class="view"><a href="https://github.com/PetarV-/Altera-Summer2014-Cambridge">View the Project on GitHub <small>PetarV-/Altera-Summer2014-Cambridge</small></a></p>
+        <ul>
+          <li><a href="https://github.com/PetarV-/Altera-Summer2014-Cambridge/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/PetarV-/Altera-Summer2014-Cambridge/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/PetarV-/Altera-Summer2014-Cambridge">View On <strong>GitHub</strong></a></li>
+        </ul>
       </header>
       <section>
         <h3>
@@ -36,7 +42,7 @@
 
 <ul>
 <li>Initial goal was to fix the kernel versions problem from last week that prevented us from compiling a correct interrupt-handling kernel module. After lots of reformats, I think we finally have a good custom SD card image, containing a manually-compiled kernel, and a choice of useful tools. A working example of an interrupt processing kernel module has since been built and successfully loaded; our own kernel module built last week currently has some undecipherable errors upon initialisation, we will possibly try to re-write it later.</li>
-<li>Main goal for the week was porting an exercise from the Cambridge ECAD practicals (can be accessed from <a href="http://www.cl.cam.ac.uk/teaching/1314/ECAD+Arch/labs/lab2/lablet2_2_1.html">this link</a>) to the SoCKit, using the ARM as a substitute for the NIOS and (for now) the on-board LCD instead of the tPad's touchscreen. This involved reading through and understanding Altera's FIFO utilities and libraries for handling the ring processor for the TTCs (written originally for the NIOS, in C) and rewriting them to be suited for the ARM. In addition I familiarised myself with the API for the LCD. The exercise was successfully ported.</li>
+<li>Main goal for the week was porting an exercise from the Cambridge ECAD practicals (can be accessed from <a href="http://www.cl.cam.ac.uk/teaching/1314/ECAD+Arch/labs/lab2/lablet2_2_1.html">this link</a>) to the SoCKit, using the ARM as a substitute for the NIOS and (for now) the on-board LCD instead of the tPad's touchscreen. This involved reading through and understanding Altera's FIFO utilities and libraries for handling the ring processor for the TTCs (both written originally for the NIOS, in C) and rewriting them to be suited for the ARM. In addition I familiarised myself with the API for the LCD. The exercise was successfully ported.</li>
 <li>For next week, the main plan is to interface to PixelStream, a Bluespec component that could be used to communicate to VGA devices.</li>
 </ul><hr><h3>
 <a name="week-2" class="anchor" href="#week-2"><span class="octicon octicon-link"></span></a>Week 2</h3>
