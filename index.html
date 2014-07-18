@@ -19,9 +19,40 @@
       <header class="without-description">
         <h1>Altera-Summer2014-Cambridge</h1>
         <p></p>
+        <p class="view"><a href="https://github.com/PetarV-/Altera-Summer2014-Cambridge">View the Project on GitHub <small>PetarV-/Altera-Summer2014-Cambridge</small></a></p>
+        <ul>
+          <li><a href="https://github.com/PetarV-/Altera-Summer2014-Cambridge/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/PetarV-/Altera-Summer2014-Cambridge/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/PetarV-/Altera-Summer2014-Cambridge">View On <strong>GitHub</strong></a></li>
+        </ul>
       </header>
       <section>
         <h3>
+<a name="week-4" class="anchor" href="#week-4"><span class="octicon octicon-link"></span></a>Week 4</h3>
+
+<p>Here's a summary of the work we undertaken in this busy week.</p>
+
+<p>Lawrence:</p>
+
+<ul>
+<li>Last week I have synthesised BERI on the SoCKit board. This week, FreeBSD was successfully booted on BERI (after having obtained an appropriate kernel build).</li>
+<li>I successfully connected the debug channels for BERI with the ARM.</li>
+<li>The debug stream is not as efficient as hoped - I started working on improving its performance by modifying the C code controlling it.</li>
+</ul><p>Petar:</p>
+
+<ul>
+<li>Initially, the goal was to interface to PixelStream -- this was successfully performed and combined with the exercise ported last week, giving us useful output of the Mandelbrot set (with colours) over VGA. Tried a variety of configurations and resolutions - the highest achieved stable resolution is 1024 x 768.</li>
+<li>Afterwards I explored the possibilities of running an X server on the ARM. This might be useful to enable f.ex. the CHERI processor to launch X applications over SSH, exploiting the ARM for graphical processing power. This involved several subproblems:
+
+<ul>
+<li>Successfully running an LXDE desktop on the ARM side - for this, an SD card image provided by Rocketboards was used.</li>
+<li>The image didn't contain sshd, so it was necessary to connect the ARM to the University network to download it. This required assigning the device a MAC address - as a base for that, I used Altera's Chip ID megafunction to extract the chip's unique identifier.</li>
+<li>Fixing all the required network configuration files to enable the board to access the internet.
+Ultimately, an X server was successfully hosted on the ARM, and we successfully accessed it from several machines in the Computer Laboratory.</li>
+</ul>
+</li>
+<li>For next week, the idea is to work on establishing a communication channel between the ARM and a processor on the FPGA -- will use the NIOS initially as it's easier to synthesise than the BERI.</li>
+</ul><hr><h3>
 <a name="week-3" class="anchor" href="#week-3"><span class="octicon octicon-link"></span></a>Week 3</h3>
 
 <p>Lawrence and I have finally obtained additional SoCKits at the end of week 2, so we were finally able to pursue separate ideas. As such, the blog posts will from now on be split between us.</p>
