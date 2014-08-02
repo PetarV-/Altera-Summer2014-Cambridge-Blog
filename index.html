@@ -19,9 +19,31 @@
       <header class="without-description">
         <h1>Altera-Summer2014-Cambridge</h1>
         <p></p>
+        <p class="view"><a href="https://github.com/PetarV-/Altera-Summer2014-Cambridge">View the Project on GitHub <small>PetarV-/Altera-Summer2014-Cambridge</small></a></p>
+        <ul>
+          <li><a href="https://github.com/PetarV-/Altera-Summer2014-Cambridge/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/PetarV-/Altera-Summer2014-Cambridge/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/PetarV-/Altera-Summer2014-Cambridge">View On <strong>GitHub</strong></a></li>
+        </ul>
       </header>
       <section>
         <h3>
+<a name="week-6" class="anchor" href="#week-6"><span class="octicon octicon-link"></span></a>Week 6</h3>
+
+<p>This was a week filled with kernel programming. Here's what was done:</p>
+
+<p>Lawrence:</p>
+
+<ul>
+<li>Built a more generic Bluespec component implementing a ring buffer &amp; the accompanying Linux kernel module as a device driver.</li>
+<li>I plan to utilise this to replace debug&amp;console channels/use it for a network tunnel (allowing the BERI to have internet access).</li>
+</ul><p>Petar:</p>
+
+<ul>
+<li>I started off by moving the entirety of my communication channel's operations to kernel space, presenting a file for the user to read from/write into. Several tests were conducted and the overall round-trip bandwidth achieved from this was as high as 16 MB/s (under certain conditions).</li>
+<li>My next goal has been to utilise an existing Bluespec tracing library to create a C application that would allow the ARM side to extract tracing data and convert it into a format readable by GTKWave (similar functionality to SignalTap, but completely under Bluespec control). Currently the component being debugged is dumping trace data into Lawrence's ring buffer component every clock cycle, which is then continuously read off by the application for a specified number of time steps, and converted into VCD.</li>
+<li>Initial tests using a traced 8-bit counter revealed that data would start to get corrupted (i.e. the component would overflow the buffer faster than the ARM can read from it) after ~82μs (about 4100 clock cycles). I then placed the actual reading code in a separate thread to the processing code and connected them with a named pipe; this has helped immensely as I still haven't been able to get the data to be corrupted on all the time step counts I tried (the maximum being ~200ms so far). I'll try even longer times next week, and then try to add other features such as triggering.</li>
+</ul><hr><h3>
 <a name="week-5" class="anchor" href="#week-5"><span class="octicon octicon-link"></span></a>Week 5</h3>
 
 <p>We're now halfway through our internship - here are some of our impressions from the fifth week.</p>
