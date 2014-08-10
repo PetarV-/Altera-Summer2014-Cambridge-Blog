@@ -19,9 +19,32 @@
       <header class="without-description">
         <h1>Altera-Summer2014-Cambridge</h1>
         <p></p>
+        <p class="view"><a href="https://github.com/PetarV-/Altera-Summer2014-Cambridge">View the Project on GitHub <small>PetarV-/Altera-Summer2014-Cambridge</small></a></p>
+        <ul>
+          <li><a href="https://github.com/PetarV-/Altera-Summer2014-Cambridge/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/PetarV-/Altera-Summer2014-Cambridge/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/PetarV-/Altera-Summer2014-Cambridge">View On <strong>GitHub</strong></a></li>
+        </ul>
       </header>
       <section>
         <h3>
+<a name="week-7" class="anchor" href="#week-7"><span class="octicon octicon-link"></span></a>Week 7</h3>
+
+<p>Here's a more detailed summary of the work we undertaken in the seventh week:</p>
+
+<p>Lawrence:</p>
+
+<ul>
+<li>Further work on the ring buffer; it now offers more interfaces to QSys;</li>
+<li>Modified BERI's console &amp; debug channels to work with the ring buffer (FreeBSD is booting successfully on the BERI again);</li>
+<li>Further additions to berictl, more merging of changes &amp; neatening of code;</li>
+<li>Started work on a layer 2 network tunnel, to give Ethernet access to the BERI.</li>
+</ul><p>Petar:</p>
+
+<ul>
+<li>For this week one of the goals was to produce a pipelined version the TTC 3 processor in SystemVerilog, to be used for teaching purposes (IB Computer Design course and ECAD practicals). I was successful in achieving this, adding forwarding paths to deal with data hazards and very simple branch prediction (recognising unconditional jumps) to deal with control hazards. The produced design takes ~1.8s less to draw the Mandelbrot set (with the ARM as the driver) than the non-pipelined version. </li>
+<li>The other half of the week was spent continuing my work on the tracing library. It has been found that my findings from last week were incorrect; the data would get corrupted much sooner, but the way I was handling the buffer was what made the output seem correct when examining arbitrary bits of the waveform. I have hence decided to extend the buffer size to 64K and focus on snapshots instead of continuous acquisition. Initially I also developed software-based triggering, which worked fine but had potential to miss the trigger if it were to happen as the buffer was prepared to catch the next snapshot. Hence I started work on a hardware-based programmable trigger in Bluespec. This component seems to be functional, however I'm sometimes getting corrupt data when running the trace reader more than once. This will be further examined next week.</li>
+</ul><hr><h3>
 <a name="week-6" class="anchor" href="#week-6"><span class="octicon octicon-link"></span></a>Week 6</h3>
 
 <p>This was a week filled with kernel programming. Here's what was done:</p>
@@ -36,7 +59,7 @@
 <ul>
 <li>I started off by moving the entirety of my communication channel's operations to kernel space, presenting a file for the user to read from/write into. Several tests were conducted and the overall round-trip bandwidth achieved from this was as high as 16 MB/s (under certain conditions).</li>
 <li>My next goal has been to utilise an existing Bluespec tracing library to create a C application that would allow the ARM side to extract tracing data and convert it into a format readable by GTKWave (similar functionality to SignalTap, but completely under Bluespec control). Currently the component being debugged is dumping trace data into Lawrence's ring buffer component every clock cycle, which is then continuously read off by the application for a specified number of time steps, and converted into VCD.</li>
-<li>Initial tests using a traced 8-bit counter revealed that data would start to get corrupted (i.e. the component would overflow the buffer faster than the ARM can read from it) after ~82μs (about 4100 clock cycles). I then placed the actual reading code in a separate thread to the processing code and connected them with a named pipe; this has helped immensely as I still haven't been able to get the data to be corrupted on all the time step counts I tried (the maximum being ~200ms so far). I'll try even longer times next week, and then try to add other features such as triggering.</li>
+<li>Initial tests using a traced 8-bit counter revealed that data would start to get corrupted (i.e. the component would overflow the buffer faster than the ARM can read from it) after ~82μs (about 4100 clock cycles). I then placed the actual reading code in a separate thread to the processing code and connected them with a named pipe; <del>this has helped immensely as I still haven't been able to get the data to be corrupted on all the time step counts I tried (the maximum being ~200ms so far)</del>. I'll try even longer times next week, and then try to add other features such as triggering.</li>
 </ul><hr><h3>
 <a name="week-5" class="anchor" href="#week-5"><span class="octicon octicon-link"></span></a>Week 5</h3>
 
