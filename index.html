@@ -31,12 +31,12 @@
 <ul>
 <li>Further work on the ring buffer; it now offers more interfaces to QSys;</li>
 <li>Modified BERI's console &amp; debug channels to work with the ring buffer (FreeBSD is booting successfully on the BERI again);</li>
-<li>Further additions to berictl, more merging of changes &amp; neatening of code;</li>
+<li>Further additions to berictl, more merging of changes &amp; tidying of code;</li>
 <li>Started work on a layer 2 network tunnel, to give Ethernet access to the BERI.</li>
 </ul><p>Petar:</p>
 
 <ul>
-<li>For this week one of the goals was to produce a pipelined version the TTC 3 processor in SystemVerilog, to be used for teaching purposes (IB Computer Design course and ECAD practicals). I was successful in achieving this, adding forwarding paths to deal with data hazards and very simple branch prediction (recognising unconditional jumps) to deal with control hazards. The produced design takes ~1.8s less to draw the Mandelbrot set (with the ARM as the driver) than the non-pipelined version. </li>
+<li>For this week one of the goals was to produce a pipelined version the TTC 3 processor in SystemVerilog, to be used for teaching purposes (IB Computer Design course and ECAD practicals). I was successful in achieving this, adding forwarding paths to deal with data hazards and very simple branch prediction (recognising unconditional jumps) to deal with control hazards. The produced design was tested with the ported Mandelbrot set exercise, and gives a ~50% speedup compared to the non-pipelined version. </li>
 <li>The other half of the week was spent continuing my work on the tracing library. It has been found that my findings from last week were incorrect; the data would get corrupted much sooner, but the way I was handling the buffer was what made the output seem correct when examining arbitrary bits of the waveform. I have hence decided to extend the buffer size to 64K and focus on snapshots instead of continuous acquisition. Initially I also developed software-based triggering, which worked fine but had potential to miss the trigger if it were to happen as the buffer was prepared to catch the next snapshot. Hence I started work on a hardware-based programmable trigger in Bluespec. This component seems to be functional, however I'm sometimes getting corrupt data when running the trace reader more than once. This will be further examined next week.</li>
 </ul><hr><h3>
 <a name="week-6" class="anchor" href="#week-6"><span class="octicon octicon-link"></span></a>Week 6</h3>
