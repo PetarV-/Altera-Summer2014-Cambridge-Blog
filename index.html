@@ -19,9 +19,31 @@
       <header class="without-description">
         <h1>Altera-Summer2014-Cambridge</h1>
         <p></p>
+        <p class="view"><a href="https://github.com/PetarV-/Altera-Summer2014-Cambridge">View the Project on GitHub <small>PetarV-/Altera-Summer2014-Cambridge</small></a></p>
+        <ul>
+          <li><a href="https://github.com/PetarV-/Altera-Summer2014-Cambridge/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/PetarV-/Altera-Summer2014-Cambridge/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/PetarV-/Altera-Summer2014-Cambridge">View On <strong>GitHub</strong></a></li>
+        </ul>
       </header>
       <section>
         <h3>
+<a name="week-8" class="anchor" href="#week-8"><span class="octicon octicon-link"></span></a>Week 8</h3>
+
+<p>Some of our impressions from the eighth week can be found below:</p>
+
+<p>Lawrence:</p>
+
+<ul>
+<li>Created a tap device (a layer 2 virtual ethernet device) to bridge ethernet between the ARM and the BERI. The device makes use of the Ring Buffer to transfer data.</li>
+<li>Mostly finished porting the Ring Buffer kernel driver to CheriBSD; successfully built but not tested yet. The same tap device as used on Linux should work on top of the ported driver.</li>
+</ul><p>Petar:</p>
+
+<ul>
+<li>Following further inspection of the tracing library, the previously found problems with data corruption have been rectified. Some additional testing with tracing larger components may be done next week.</li>
+<li>Massive refactoring and cleanup of the SystemVerilog Pipelined TTC from last week. It is now in a rather stable and presentable state and no major modifications are to be expected from this point.</li>
+<li>Following this achievement I started work on the Bluespec version of the TTC. Initially a lot of the effort was put into tidying up the sequential version (moving large bits of combinational logic into functions, fixing minor bugs, etc). Currently my efforts are to pipeline it - it is slightly difficult to make some aspects work and still appear as presentable code, so this is likely to take up some time next week.</li>
+</ul><hr><h3>
 <a name="week-7" class="anchor" href="#week-7"><span class="octicon octicon-link"></span></a>Week 7</h3>
 
 <p>Here's a more detailed summary of the work we undertaken in the seventh week:</p>
@@ -31,12 +53,12 @@
 <ul>
 <li>Further work on the ring buffer; it now offers more interfaces to QSys;</li>
 <li>Modified BERI's console &amp; debug channels to work with the ring buffer (FreeBSD is booting successfully on the BERI again);</li>
-<li>Further additions to berictl, more merging of changes &amp; tidying of code;</li>
+<li>Further additions to berictl, more merging of changes &amp; neatening of code;</li>
 <li>Started work on a layer 2 network tunnel, to give Ethernet access to the BERI.</li>
 </ul><p>Petar:</p>
 
 <ul>
-<li>For this week one of the goals was to produce a pipelined version the TTC 3 processor in SystemVerilog, to be used for teaching purposes (IB Computer Design course and ECAD practicals). I was successful in achieving this, adding forwarding paths to deal with data hazards and very simple branch prediction (recognising unconditional jumps) to deal with control hazards. The produced design was tested with the ported Mandelbrot set exercise, and gives a ~50% speedup compared to the non-pipelined version. </li>
+<li>For this week one of the goals was to produce a pipelined version the TTC 3 processor in SystemVerilog, to be used for teaching purposes (IB Computer Design course and ECAD practicals). I was successful in achieving this, adding forwarding paths to deal with data hazards and very simple branch prediction (recognising unconditional jumps) to deal with control hazards. The produced design takes ~1.8s less to draw the Mandelbrot set (with the ARM as the driver) than the non-pipelined version. </li>
 <li>The other half of the week was spent continuing my work on the tracing library. It has been found that my findings from last week were incorrect; the data would get corrupted much sooner, but the way I was handling the buffer was what made the output seem correct when examining arbitrary bits of the waveform. I have hence decided to extend the buffer size to 64K and focus on snapshots instead of continuous acquisition. Initially I also developed software-based triggering, which worked fine but had potential to miss the trigger if it were to happen as the buffer was prepared to catch the next snapshot. Hence I started work on a hardware-based programmable trigger in Bluespec. This component seems to be functional, however I'm sometimes getting corrupt data when running the trace reader more than once. This will be further examined next week.</li>
 </ul><hr><h3>
 <a name="week-6" class="anchor" href="#week-6"><span class="octicon octicon-link"></span></a>Week 6</h3>
