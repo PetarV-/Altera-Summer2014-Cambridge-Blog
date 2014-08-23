@@ -19,9 +19,33 @@
       <header class="without-description">
         <h1>Altera-Summer2014-Cambridge</h1>
         <p></p>
+        <p class="view"><a href="https://github.com/PetarV-/Altera-Summer2014-Cambridge">View the Project on GitHub <small>PetarV-/Altera-Summer2014-Cambridge</small></a></p>
+        <ul>
+          <li><a href="https://github.com/PetarV-/Altera-Summer2014-Cambridge/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/PetarV-/Altera-Summer2014-Cambridge/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/PetarV-/Altera-Summer2014-Cambridge">View On <strong>GitHub</strong></a></li>
+        </ul>
       </header>
       <section>
         <h3>
+<a name="week-9" class="anchor" href="#week-9"><span class="octicon octicon-link"></span></a>Week 9</h3>
+
+<p>The penultimate week of our internship has just finished - here are our thoughts on the progress:</p>
+
+<p>Lawrence:</p>
+
+<ul>
+<li>Ported the Ring Buffer device driver to FreeBSD.</li>
+<li>Made slight modifications to the tunnel code (which now also works on FreeBSD).</li>
+<li>Succesfully set up an SSH session between the ARM and the BERI.</li>
+<li>Started work on improving how the driver handles multiple devices (to avoid having to recompile for every new device).</li>
+</ul><p>Petar:</p>
+
+<ul>
+<li>Successfully demoed my tracing library to a colleague, and completely reorganised my side of the summer projects' repository;</li>
+<li>Finished working on pipelining the Bluespec TTC version: three versions were produced - a basic pipelined version and two versions utilising different methods of branch prediction and jump detection. In addition, several bugs were fixed with the original design and four new test benches have been made to test the correctness of the system.</li>
+<li>Started work on a testing script (with accompanying utility C programs) which could be used for measuring the performance of a Bluespec TTC implementation against several test benches. This could then be used for a full weekly exercise for the Masters students undertaking the Advanced Computer Design course. Most of the script is completed, but several aspects will likely need to be modified after review by a colleague.</li>
+</ul><hr><h3>
 <a name="week-8" class="anchor" href="#week-8"><span class="octicon octicon-link"></span></a>Week 8</h3>
 
 <p>Some of our impressions from the eighth week can be found below:</p>
