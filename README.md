@@ -1,5 +1,5 @@
-Altera-Summer2014-Cambridge
-===========================
+Altera-Summer2014-Cambridge-Blog
+================================
 
 A GitHub Pages-powered blog showcasing the progress made on the [Altera](http://www.altera.co.uk) sponsored Summer 2014 internship in the [Cambridge University Computer Laboratory](http://www.cl.cam.ac.uk/)'s [Computer Architecture Group](http://www.cl.cam.ac.uk/research/comparch/).
 
