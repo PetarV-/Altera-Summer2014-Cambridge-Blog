@@ -19,9 +19,38 @@
       <header class="without-description">
         <h1>Altera-Summer2014-Cambridge</h1>
         <p></p>
+        <p class="view"><a href="https://github.com/PetarV-/Altera-Summer2014-Cambridge">View the Project on GitHub <small>PetarV-/Altera-Summer2014-Cambridge</small></a></p>
+        <ul>
+          <li><a href="https://github.com/PetarV-/Altera-Summer2014-Cambridge/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/PetarV-/Altera-Summer2014-Cambridge/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/PetarV-/Altera-Summer2014-Cambridge">View On <strong>GitHub</strong></a></li>
+        </ul>
       </header>
       <section>
         <h3>
+<a name="week-10" class="anchor" href="#week-10"><span class="octicon octicon-link"></span></a>Week 10</h3>
+
+<p>Today is the last day of our internship, and here are a few concluding thoughts:</p>
+
+<ul>
+<li>We had a very good time, and learned a lot about hardware and processor design, Unix tools and kernel programming, and also gained skill in a new hardware description language (Bluespec SystemVerilog).</li>
+<li>The SoCKit board is a very good platform with high potential uses for both teaching and research purposes.</li>
+</ul><p>This is what we have been doing in this concluding phase of our work:</p>
+
+<p>Lawrence:</p>
+
+<ul>
+<li>Modified the device drivers to handle multiple devices;</li>
+<li>FreeBSD driver now takes all the necessary information from the FDT (flattened device tree);</li>
+<li>Linux driver now takes its information from a config file which is parsed upon insertion of the module (can be provided as a command-line argument).</li>
+</ul><p>Petar:</p>
+
+<ul>
+<li>Completed the implementation of the testing scripts for the Bluespec TTCs, and created another version of the exercise which would encourage the students to implement caching;</li>
+<li>This involved creating a simple Bluespec component to introduce higher latency for memory accesses, and then implementing a simple direct-mapped cache on top of that for performance improvements (gotten within 1% of the version with fast memory access).</li>
+</ul><p>In addition, this week we have completed an initial version of our final report (in the form of a slide deck) which will be presented to Altera in November. This may be further adjusted in the following months.</p>
+
+<hr><h3>
 <a name="week-9" class="anchor" href="#week-9"><span class="octicon octicon-link"></span></a>Week 9</h3>
 
 <p>The penultimate week of our internship has just finished - here are our thoughts on the progress:</p>
