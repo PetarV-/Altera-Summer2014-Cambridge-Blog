@@ -5,4 +5,4 @@ A GitHub Pages-powered blog showcasing the progress made on the [Altera](http://
 
 The project involved exploring the teaching and research potentials of the recent Arrow SoCKit board containing the Altera Cyclone V System-on-Chip FPGA. It was supervised by [Dr Simon Moore](http://www.cl.cam.ac.uk/~swm11/).
 
-The blog is hosted on http://petarv-.github.io and was maintained by [Lawrence Esswood](https://github.com/LawrenceEsswood) and [Petar Veličković](https://github.com/PetarV-).
+The blog is hosted on http://petarv-.github.io and was maintained by this year's interns, [Lawrence Esswood](https://github.com/LawrenceEsswood) and [Petar Veličković](https://github.com/PetarV-).
